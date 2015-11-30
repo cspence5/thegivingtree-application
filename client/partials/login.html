@@ -1,0 +1,26 @@
+<legend>Login Form</legend>
+
+<form name="loginForm" ng-submit="login(loginForm.$valid)" novalidate>
+	<div class="form-group" ng-class="{ 'has-error' : (loginForm.submitted || loginForm.email.$touched) && loginForm.email.$invalid }">
+	  <label for="email">Email</label>
+	  <input type="email" class="form-control" id="email" name="email" placeholder="Email" 
+	  ng-model="user.email"
+	  required>
+	  <div class="help-block" ng-messages="loginForm.email.$error" ng-if="(loginForm.submitted || loginForm.email.$touched)">
+			<div ng-messages-include="partials/validation_messages.html"></div>
+		</div>
+	</div>
+
+	<div class="form-group" ng-class="{ 'has-error' : (loginForm.submitted || loginForm.email.$touched) && loginForm.password.$invalid }">
+	  <label for="password">Password</label>
+	  <input type="password" class="form-control" id="password" name="password" placeholder="Password" 
+	  ng-model="user.password" 
+	  required>
+	  <div class="help-block" ng-messages="loginForm.password.$error" ng-if="(loginForm.submitted || loginForm.email.$touched)">
+			<div ng-messages-include="partials/validation_messages.html"></div>
+		</div>
+	</div>
+
+	<button type="submit" class="btn btn-primary" ng-disabled="registrationForm.$invalid">Submit</button>
+
+</form>

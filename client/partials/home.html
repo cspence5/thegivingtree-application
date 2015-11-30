@@ -1,0 +1,113 @@
+<div class="container" ng-controller="HomeCtrl">
+
+  <!-- Main component for a primary marketing message or call to action -->
+  <!--
+  <div class="jumbotron">
+    <h3>Christmas gifts for the needy!</h3>
+  </div>
+  -->
+
+  <form name="searchForm" ng-submit="search(searchForm.$valid)" novalidate>
+    <div id="custom-search-input">
+      <div class="input-group col-md-12">
+        <input type="text" class="form-control input-lg" placeholder="Search..." name="keywords" id="keywords"
+        ng-model="vm.keywords"
+        required>
+        <span class="input-group-btn">
+          <button class="btn btn-info btn-lg" type="submit">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </span>
+      </div>
+    </div>
+  </form>
+
+  <br/>
+  <br/>
+
+  <div class="categories-wrapper">
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading">Categories</div>
+      <!-- List group -->
+      <ul class="list-group" ng-repeat="c in categories | orderBy: 'name'">
+        <a href="#/categories/{{c.id}}" class="list-group-item">
+          <!--<span class="badge">14</span>-->
+          {{c.name}}
+        </a>
+      </ul>
+    </div>    
+  </div>
+
+  <div class="wishlists-wrapper">
+
+    <div class="row">
+      <!--<div class="col-xs-6 col-md-3" ng-repeat="w in wishlists">-->
+      <div class="col-xs-6 col-md-3" ng-repeat="w in filteredWishlists = (wishlists | filter:wishlistFilter)">
+        <a href="#/wishlists/{{w._id}}" class="thumbnail">
+          <img src="/img/tree_flood.jpg" alt="...">
+          <div class="caption">
+            <h5>{{w.name}}</h5>
+            <p>Category: {{w.category.name}}</p>
+          </div>
+        </a>
+      </div>
+      <p ng-show="!filteredWishlists.length">no wishlists yet.</p>
+    </div>
+
+    <nav ng-show="filteredWishlists.length">
+      <ul class="pagination">
+        <li class="disabled">
+          <a href="#" aria-label="Previous">
+            <span aria-hidden="true">&laquo;</span>
+          </a>
+        </li>
+        <li class="active"><a href="#">1</a></li>
+        <li><a href="#">2</a></li>
+        <li><a href="#">3</a></li>
+        <li><a href="#">4</a></li>
+        <li><a href="#">5</a></li>
+        <li>
+          <a href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+          </a>
+        </li>
+      </ul>
+    </nav> <!-- /pagination -->
+  </div>
+
+  
+
+</div>
+
+<!--
+<div class="container" ng-controller="HomeCtrl">
+  <div class="page-header">
+    <h3>This is from {{ name }}</h3>
+  </div>
+
+
+  <p class="lead">This app is scaffolded by
+    <code>slush-ng</code></p>
+
+  <p class="lead">This app uses <code>Bootstrap</code> for styling. If you are looking to add functional Bootstrap components, refer <a href="http://angular-ui.github.io/bootstrap/" target="_blank">UI Bootstrap</a>.
+  </p>
+
+  <p class="lead">This app is baked in with
+    <ul>
+      <li>Gulp - A task runner</li>
+      <li>Bower - A client side dependency manager</li>
+    </ul>
+  </p>
+
+  <p class="lead">This app comes integrated with
+    <code>angular-route</code>,
+    <code>controllers</code>, a sample
+    <code>directive</code> and a sample
+    <code>filter</code>
+  </p>
+
+  <p class="lead">This app also has a sample <code>factory</code> layer, that can be used to interact with RESTful services (includes an example too).</p>
+
+</div>
+-->

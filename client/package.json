@@ -1,0 +1,16 @@
+{
+  "name": "TheGivingTreeClient",
+  "version": "0.0.3",
+  "dependencies": {
+    "angular": "latest",
+    "angular-messages": "^1.4.7",
+    "angular-route": "latest",
+    "bootstrap": "latest",
+    "express": "^4.13.3",
+    "gulp": "latest",
+    "gulp-connect": "latest",
+    "jquery": "^2.1.4",
+    "morgan": "^1.6.1"
+  },
+  "scripts": {}
+}

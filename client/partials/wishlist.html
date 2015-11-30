@@ -1,0 +1,67 @@
+<div class="container" ng-controller="WishlistCtrl">
+	<div class="panel panel-primary">
+        <div class="panel-heading"></div>
+        <div class="panel-body">
+          <h4>{{ vm.wishlist.name }}</h4>
+
+          <div class="columns-container">
+            <div class="left-column">
+              <img class="main-img" src="/img/tree_flood.jpg" alt="...">
+
+              <div class="panel panel-default">
+                <div class="panel-body">
+                  <span class="shared-stat">1.8K TOTAL SHARES</span>
+                  <span class="shared-stat">2.8K TOTAL Likes</span>
+                  <span class="shared-stat">3.8K TOTAL Tweets</span>
+                </div>
+              </div>
+
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title">My story</h3>
+                </div>
+                <div class="panel-body">
+                  <p>{{ vm.wishlist.description }}</p>
+                </div>
+              </div>
+
+              <div class="dashboard-row" id="my-wishes">
+                <div class="panel panel-default">
+                  <!-- Default panel contents -->
+                  <div class="panel-heading"><h4>My Wishes</h4></div>
+
+                  <!-- List group -->
+                  <ul class="list-group">
+                    <li class="list-group-item" ng-repeat="w in filteredWishes = (vm.wishes | filter:wishFilter) | limitTo:quantity">
+                      <a href="#">
+                        {{ w.name }}
+                      </a>
+                      <button class="btn btn-primary badge">DONATE</button>
+                    </li>                    
+                  </ul>
+                </div> <!-- /.panel -->
+            </div><!-- /.dashboard-row -->
+            </div>
+            <div class="right-column">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title"><a href="#">Atlanta, GA</a></h3>
+                </div>
+                <div class="panel-body">
+                  <p><b>My Wishes fulfilled</b></p>
+                  <div class="progress">
+                    <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+                      <span class="sr-only">40% Complete (success)</span>
+                      40%
+                    </div>
+                  </div>
+                  <p>
+                    <a class="btn btn-lg btn-primary" href="#my-wishes" role="button">DONATE NOW</a>
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+</div>

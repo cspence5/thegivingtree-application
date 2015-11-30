@@ -1,0 +1,24 @@
+<div class="container" ng-controller="Page4Ctrl">
+  <div class="page-header">
+    <h3>List of users from the REST API
+      <code>/api/v1/admin/users</code>
+    </h3>
+  </div>
+
+
+  <p class="lead">
+    <table class="table table-striped">
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+      <tr ng-repeat="u in users | orderBy: '+fullName'">
+        <td>{{u.id}}</td>
+        <td>{{u.fullName}}</td>  
+        <td>{{u.email}}</td> 
+      </tr>
+    </table>
+  </p>
+
+</div>

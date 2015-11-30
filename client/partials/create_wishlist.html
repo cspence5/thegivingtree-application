@@ -1,0 +1,79 @@
+<div class="container" ng-controller="CreateWishlistCtrl">
+    
+  <div class="panel panel-default">
+    <form name="createWishlistForm" ng-submit="createWishlist(createWishlistForm.$valid)" novalidate>
+      <div id="create_wishlist">
+        <div class="panel-heading">
+          <i class="fa fa-cogs fa-fw"></i> Create New Wishlist
+        </div>
+        <div class="panel-body">
+          <div class="col-xs 12 col-sm-5 col-md-5">
+            <span class="label label-danger">
+              <i class="fa fa-truck fa-fw"></i> Name and Description
+            </span>
+            <p></p>
+            <div class="form-group">
+              <label for="name">WishList Name</label>
+              <div class="input-group" ng-class="{ 'has-error' : (createWishlistForm.submitted || createWishlistForm.name.$touched) && createWishlistForm.name.$invalid }">
+                <input type="text" class="form-control" name="name" id="name" placeholder="Enter Name"
+                ng-model="wishlist.name"
+                required>
+                <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-asterisk"></span>
+                </span>
+              </div>
+              <div class="help-block" ng-messages="createWishlistForm.name.$error" ng-if="(createWishlistForm.submitted || createWishlistForm.name.$touched)">
+                <div ng-messages-include="partials/validation_messages.html"></div>
+              </div>
+            </div>
+             
+            <div class="form-group">
+                <label> Description</label>
+                <div ng-class="{ 'has-error' : (createWishlistForm.submitted || createWishlistForm.description.$touched) && createWishlistForm.description.$invalid }">
+                  <textarea class="form-control" name="description" placeholder="Leave a message concerning your wish" rows="10"
+                  ng-model="wishlist.description"
+                  required
+                  ></textarea>
+                </div>
+                <div class="help-block" ng-messages="createWishlistForm.description.$error" ng-if="(createWishlistForm.submitted || createWishlistForm.description.$touched)">
+                  <div ng-messages-include="partials/validation_messages.html"></div>
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="category">Select Category:</label>
+              <select class="form-control" name="category" id="category"
+              ng-model="vm.category"
+              ng-options="category.name for category in vm.categories track by category.id">
+              </select>
+            </div>
+          </div> <!--/.column -->
+          <div class="col-xs 12 col-sm-20 col-md-7">
+            <br/>
+            <br/>
+            <div class="form-group">
+              <div >
+                <label> Wish Picture</label>
+              </div>
+              <div class="row">
+                  <img class="img-responsive col-sm-6" src="/img/morgan_freeman_family.jpg" alt="The awesome description">
+              </div>
+            </div>
+          </div>
+          <div style="float:right; font-size: 85%; position: relative; top:-10px">
+            <!--
+            <button id="next_button" class="btn btn-success" type="button">Next</button>
+            -->
+            <button class="btn btn-success" type="submit">Next</button>
+          </div>
+        </div>
+      </div>
+    </form>
+    
+    <!-- Moved /#add_wish to create_wish.html -->
+  </div>
+
+
+  
+</div> <!-- /.container -->
+
+

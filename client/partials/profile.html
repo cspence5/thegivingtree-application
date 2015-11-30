@@ -1,0 +1,129 @@
+<div class="container" ng-controller="ProfileCtrl">
+	<h1 class="page-header">Edit Profile</h1>
+  <form name="profileForm" ng-submit="editProfile(profileForm.$valid)" novalidate>
+    <div class="row">
+      <!-- left column -->
+      <div class="col-md-4 col-sm-6 col-xs-12">
+        <div class="text-center">
+          <img src="a/img/morgan_freeman.jpg" class="avatar img-circle img-thumbnail" alt="avatar">
+          <h6>Upload a different photo...</h6>
+          <input type="file" class="text-center center-block well well-sm">
+        </div>
+      </div>
+      <!-- edit form column -->
+      <div class="col-md-8 col-sm-6 col-xs-12 personal-info">
+      <!--  <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a> 
+          <i class="fa fa-coffee"></i>
+          This is an <strong>.alert</strong>. Use this to show important messages to the user. 
+        </div>-->
+        <h3>Personal info</h3>
+        <form class="form-horizontal" role="form">
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Full name:</label>
+            <div class="col-lg-8" ng-class="{ 'has-error' : (profileForm.submitted || profileForm.full_name.$touched) && profileForm.full_name.$invalid }">
+              <input class="form-control" type="text" name="full_name" id="full_name"
+              ng-model="vm.user.full_name"
+              required>
+              <div class="help-block" ng-messages="profileForm.email.$error" ng-if="(profileForm.submitted || profileForm.full_name.$touched)">
+                <div ng-messages-include="partials/validation_messages.html"></div>
+              </div>
+            </div>
+          </div>
+       
+          <div class="form-group">
+            <label class="col-lg-3 control-label">Email:</label>
+            <div class="col-lg-8">
+              <input class="form-control" value="freeman@gmail.com" type="text" name="email" id="email"
+              ng-model="vm.user.email"
+              required
+              ng-disabled="true">
+            </div>
+          </div>
+
+          <div class="form-group" ng-class="{ 'has-error' : (profileForm.submitted || profileForm.gender.$touched) && profileForm.gender.$invalid }">
+            <label class="col-lg-3 control-label" for="gender">Gender</label>
+            <label class="radio-inline">
+              <input type="radio" class="" ng-model="vm.user.profile.gender" name="gender" value="f" ng-required="!vm.user.profile.gender">Female
+            </label>
+            <label class="radio-inline">
+              <input type="radio" class="" ng-model="vm.user.profile.gender" name="gender" value="m" ng-required="!vm.user.profile.gender">Male
+            </label>
+            <div class="help-block" ng-messages="profileForm.gender.$error" ng-if="(profileForm.submitted || profileForm.gender.$touched)">
+              <div ng-messages-include="partials/validation_messages.html"></div>
+            </div>
+          </div>
+          <!--<div class="form-group">
+            <label class="col-lg-3 control-label">Time Zone:</label>
+            <div class="col-lg-8">
+              <div class="ui-select">
+                <select id="user_time_zone" class="form-control">
+                  <option value="Hawaii">(GMT-10:00) Hawaii</option>
+                  <option value="Alaska">(GMT-09:00) Alaska</option>
+                  <option value="Pacific Time (US &amp; Canada)">(GMT-08:00) Pacific Time (US &amp; Canada)</option>
+                  <option value="Arizona">(GMT-07:00) Arizona</option>
+                  <option value="Mountain Time (US &amp; Canada)">(GMT-07:00) Mountain Time (US &amp; Canada)</option>
+                  <option value="Central Time (US &amp; Canada)" selected="selected">(GMT-06:00) Central Time (US &amp; Canada)</option>
+                  <option value="Eastern Time (US &amp; Canada)">(GMT-05:00) Eastern Time (US &amp; Canada)</option>
+                  <option value="Indiana (East)">(GMT-05:00) Indiana (East)</option>
+                </select>
+              </div>
+            </div>
+          </div> --> 
+          <div class="form-group">
+            <label class="col-md-3 control-label">Address:</label>
+            <div class="col-md-8">
+              <input class="form-control" placeholder="Street Address..." type="text"
+              ng-model="vm.user.profile.address"
+              required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">City:</label>
+            <div class="col-md-8">
+              <input class="form-control" placeholder="City..." type="text"
+              ng-model="vm.user.profile.city"
+              required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">State:</label>
+            <div class="col-md-8">
+              <input class="form-control" placeholder="State..." type="text"
+              ng-model="vm.user.profile.state"
+              required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Zip:</label>
+            <div class="col-md-8">
+              <input class="form-control" placeholder="zipcode" type="text"
+              ng-model="vm.user.profile.zipcode"
+              required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Password:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="11111122333" type="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label">Confirm password:</label>
+            <div class="col-md-8">
+              <input class="form-control" value="11111122333" type="password">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input class="btn btn-primary" value="Save Changes" type="submit">
+              <span></span>
+              <input class="btn btn-default" value="Cancel" type="reset">
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </form>
+</div>

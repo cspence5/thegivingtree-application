@@ -1,0 +1,102 @@
+<div class="container" ng-controller="DashboardCtrl">
+  <div class="dashboard-row">
+    <div class="notifications-box">
+      <div class="panel panel-default">
+        <!-- Default panel contents -->
+        <div class="panel-heading"><h4>Notifications</h4></div>
+
+        <!-- List group -->
+        <ul class="list-group">
+          <a href="#" class="list-group-item">
+            John Doe just looked at your list
+          </a>
+          <a href="#" class="list-group-item">
+            Jane Doe just got you a jet ski!
+          </a>
+          <a href="#" class="list-group-item">
+            Jet Fund wishlist accepted!
+          </a>
+          <a href="#" class="list-group-item">
+            Boat Fund wishlist Accepted!
+          </a>
+
+          
+        </ul>
+      </div>
+    </div>
+
+    <div class="dashboard-statistics">
+      <h4>Statistics</h4>
+      <p><b>My Wishes fulfilled</b></p>
+      <div class="progress">
+        <div class="progress-bar progress-bar-success progress-bar-striped" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100" style="width: 40%">
+          <span class="sr-only">40% Complete (success)</span>
+          40%
+        </div>
+      </div>
+      <!--
+      <div class="progress">
+        <div class="progress-bar progress-bar-info progress-bar-striped" role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: 20%">
+          <span class="sr-only">20% Complete</span>
+          20%
+        </div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-warning progress-bar-striped" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%">
+          <span class="sr-only">60% Complete (warning)</span>
+          60%
+        </div>
+      </div>
+      <div class="progress">
+        <div class="progress-bar progress-bar-danger progress-bar-striped" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: 80%">
+          <span class="sr-only">80% Complete (danger)</span>
+          80%
+        </div>
+      </div>
+      -->
+    </div>
+
+  </div>
+
+  <div class="dashboard-row">
+    <h4>My Wishlists</h4>
+
+    <div class="row">
+      <div class="col-xs-6 col-md-3" ng-repeat="w in filteredWishlists = (wishlists | filter:wishlistFilter) | limitTo:quantity">
+        <a href="#/wishlists/{{ w.id }}" class="thumbnail">
+          <img src="/img/tree_flood.jpg" alt="...">
+          <div class="caption">
+            <h5>{{w.name}}</h5>
+          </div>
+        </a>
+      </div>
+      <p style="margin-left: 20px;" ng-show="!filteredWishlists.length">no wishlists yet.</p>
+    </div> <!-- /.row -->
+    <p class="more" ng-show="filteredWishlists.length > quantity"><a href="#/wishlists">More Wishlists >></a></p>
+  </div><!-- /.dashboard-row -->
+
+  <div class="dashboard-row">
+    <div class="panel panel-default">
+      <!-- Default panel contents -->
+      <div class="panel-heading"><h4>Donation History</h4></div>
+
+      <!-- List group -->
+      <ul class="list-group">
+        <a href="#" class="list-group-item">
+          12/20/2010 - Donated a jacket to John Doe
+        </a>
+        <a href="#" class="list-group-item">
+          12/20/2011 - Donated a Car to Jane Doe
+        </a>
+        <a href="#" class="list-group-item">
+          12/20/2012 - Donated a House to James Doe
+        </a>
+        <a href="#" class="list-group-item">
+          12/20/2013 - Donated a piece of land to Justine Doe
+        </a>
+
+        
+      </ul>
+    </div> <!-- /.panel -->
+  </div><!-- /.dashboard-row -->
+</div>

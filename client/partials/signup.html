@@ -1,0 +1,60 @@
+<legend>Signup Form</legend>
+
+<form name="registrationForm" ng-submit="signup(registrationForm.$valid)" novalidate>
+
+	<div class="form-group" ng-class="{ 'has-error' : (registrationForm.submitted || registrationForm.full_name.$touched) && registrationForm.full_name.$invalid }">
+		<label for="full_name">Full Name</label>
+		<input type="text" class="form-control" id="full_name" name="full_name" placeholder="Full Name" 
+		ng-model="user.full_name" 
+		ng-minlength="3" 
+		required>
+		<div class="help-block" ng-messages="registrationForm.full_name.$error" ng-if="(registrationForm.submitted || registrationForm.full_name.$touched)">
+			<div ng-messages-include="partials/validation_messages.html"></div>
+		</div>
+	</div>
+
+	<div class="form-group" ng-class="{ 'has-error' : (registrationForm.submitted || registrationForm.email.$touched) && registrationForm.email.$invalid }">
+		<label for="email">Email</label>
+		<input type="email" class="form-control" id="email" name="email" placeholder="Email" 
+		ng-model="user.email" 
+		required>
+		<div class="help-block" ng-messages="registrationForm.email.$error" ng-if="(registrationForm.submitted || registrationForm.email.$touched)">
+			<div ng-messages-include="partials/validation_messages.html"></div>
+		</div>
+	</div>
+
+	<div class="form-group" ng-class="{ 'has-error' : (registrationForm.submitted || registrationForm.password.$touched) && registrationForm.password.$invalid }">
+		<label for="password">Password</label>
+		<input type="password" class="form-control" id="password" name="password" placeholder="Password" 
+		ng-model="user.password" 
+		password required>
+		<div class="help-block" ng-messages="registrationForm.password.$error" ng-if="(registrationForm.submitted || registrationForm.password.$touched)">
+			<div ng-messages-include="partials/validation_messages.html"></div>
+		</div>
+	</div>
+
+	<div class="form-group" ng-class="{ 'has-error' : (registrationForm.submitted || registrationForm.dob.$touched) && registrationForm.dob.$invalid }">
+		<label for="dob">Date of Birth</label>
+		<input type="date" class="form-control" id="dob" name="dob" placeholder="Date of Birth" 
+		ng-model="user.dob" 
+		required>
+		<div class="help-block" ng-messages="registrationForm.dob.$error" ng-if="(registrationForm.submitted || registrationForm.dob.$touched)">
+			<div ng-messages-include="partials/validation_messages.html"></div>
+		</div>
+	</div>
+
+	<div class="form-group" ng-class="{ 'has-error' : (registrationForm.submitted || registrationForm.gender.$touched) && registrationForm.gender.$invalid }">
+		<label for="gender">Gender</label> 
+		<input type="radio" class="form-control" ng-model="user.gender" name="gender" value="f" ng-required="!user.gender">Female
+		<input type="radio" class="form-control" ng-model="user.gender" name="gender" value="m" ng-required="!user.gender">Male
+		<div class="help-block" ng-messages="registrationForm.gender.$error" ng-if="(registrationForm.submitted || registrationForm.gender.$touched)">
+			<div ng-messages-include="partials/validation_messages.html"></div>
+		</div>
+	</div>
+
+	<!--
+	<button type="submit" class="btn btn-primary" ng-disabled="registrationForm.$invalid">Submit</button>
+	-->
+	<button type="submit" class="btn btn-primary">Submit</button>
+
+</form>

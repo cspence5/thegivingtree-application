@@ -1,0 +1,74 @@
+<div class="container" ng-controller="ManageWishlistsCtrl">
+	<div class="container-fluid" align = "center" >
+      <div class="row-fluid">
+        <div class="span3">
+        
+		
+		
+		</div>
+        <div class="">
+          <div class="well hero-unit">
+            <h1>Admin</h1>
+            <p></a></p>
+          </div>
+         <div class="row-fluid" align="center">
+            <div class="span4">
+              <h3>Total Users</h3>
+              <p><a href="admin.html" class="badge badge-inverse">563</a></p>
+            </div>
+            <div class="span4">
+              <h3>New Users Today</h3>
+              <p><a href="new_users.html" class="badge badge-inverse">8</a></p>
+            </div>
+            <div class="span4">
+              <h3>Pending Approvals</h3>
+			  <p><a href="pending.html" class="badge badge-inverse">2</a></p>
+            </div>
+          </div>
+		  <br />
+		  <div class="row-fluid">
+			<div class="page-header">
+				<h1>New Wishlists<small> Approve or Reject</small></h1>
+			</div>
+			<table class="table table-bordered">
+				<thead>
+					<tr>
+						<th>ID</th>
+						<th>Name</th>
+						<th>Created By</th>
+						<th>Status</th>
+						<th>Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="pending-user" ng-repeat="w in filteredWishlists = (vm.wishlists | filter:wishlistFilter) | limitTo:quantity | orderBy: '-date_created -approval_status'">
+						<td>{{ w.id }}</td>
+						<td>{{ w.name }}</td>
+						<td>{{ w.created_by.full_name }}</td>
+						<td>{{ w.approval_status }}</td>
+						<td>
+							<div class="dropdown">
+								<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+								<span class="caret"></span></button>
+								<ul class="dropdown-menu">
+									<li><a href="#">Approve</a></li>
+									<li><a href="#">Deny</a></li>
+
+								</ul>
+							</div>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		  </div>
+        </div>
+      </div>
+
+      <hr>
+
+    <!--  <footer class="well">
+        &copy; Strass
+      </footer> -->
+
+    </div>
+</div>

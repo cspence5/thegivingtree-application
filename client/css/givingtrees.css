@@ -1,0 +1,127 @@
+.categories-wrapper{
+	display: block;
+	position: relative;
+	float: left;
+	width: 200px;
+	height: 500px;
+	border: 0px solid blue;
+}
+
+.wishlists-wrapper{
+	display: block;
+	position: relative;
+	float: left;
+	width: 920px;
+	margin: 0px 0px 0px 20px;
+	border: 0px solid blue;
+}
+
+.wishlists-wrapper .row .col-xs-6.col-md-3 .thumbnail{
+	-webkit-box-shadow: 2px 2px 5px 1px #ccc;  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+	-moz-box-shadow:    2px 2px 5px 1px #ccc;  /* Firefox 3.5 - 3.6 */
+	box-shadow:         2px 2px 5px 1px #ccc;  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+}
+
+/* Dashboard */
+
+.dashboard-row{
+	display: block;
+	position: relative;
+	/*width: 920px;*/
+	margin: 0px auto;
+	border: 0px solid red;
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.dashboard-row .notifications-box{
+	display: block;
+	position: relative;
+	width: 350px;
+    float: left;
+    margin: 0px 15px 0px 0px;
+}
+
+.dashboard-row .dashboard-statistics{
+	display: block;
+	position: relative;
+    width: 770px;
+    float: left;
+}
+
+.dashboard-row .my-wishlists{
+	display: block;
+	position: relative;
+    width: 920px;
+}
+
+.dashboard-row .donation-history{
+	display: block;
+	position: relative;
+	width: 920px;
+}
+
+.dashboard-row .more{
+	float: right;
+	font-weight: bolder;
+}
+
+.dashboard-row .more a{
+	text-decoration: none;
+}
+
+.dashboard-row .more:hover{
+	cursor: pointer;
+}
+/* END Dashboard */
+
+/* view_wishlist */
+.columns-container{
+	display: block;
+	position: relative;
+	overflow: hidden;
+}
+
+.columns-container .left-column{
+	display: block;
+	position: relative;
+	overflow: hidden;
+	width: 650px;
+	min-height: 400px;
+	float: left;
+	border: 0px solid blue;
+}
+
+.columns-container .right-column{
+	display: block;
+	position: relative;
+	overflow: hidden;
+	width: 400px;
+	min-height: 400px;
+	float: left;
+	margin: 0px 0px 0px 20px;
+	border: 0px solid blue;
+}
+
+.columns-container .main-img{
+    width: 650px;
+    margin: 0px auto;
+    position: relative;
+    display: block;
+    border: 1px solid gainsboro;
+    -moz-border-radius: 10px;
+	-webkit-border-radius: 10px;
+	border-radius: 10px; /* future proofing */
+	-khtml-border-radius: 10px; /* for old Konqueror browsers */
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+
+.columns-container .shared-stat{
+	border-right: 1px solid gainsboro;
+	padding: 0px 10px 0px 10px;
+	font-weight: bolder;
+	font-size: 18px;
+}
+
+/* END view_wishlist */
