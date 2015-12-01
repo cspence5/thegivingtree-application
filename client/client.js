@@ -26,16 +26,12 @@ app.get("/", function(req, res) {
    // res.sendFile('index.html', { root: __dirname });
 });
 
-var server = app.listen(4000 || 3000, process.env.IP, function() {
-  var addr = server.address();
-   console.log("Client Server listening at", addr.address + ":" + addr.port);
-  //console.log('[SERVER] Express server listening on port ' + server.address().port);
-})
 
-/**
+
+
 // Start Server
 app.listen(port, function () {
     console.log( "[CLIENT] Express server listening on port " + port);
 });
-**/
+
 };
