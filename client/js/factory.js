@@ -1,4 +1,4 @@
-var THE_GIVING_TREE_API_HOST = process.env.IP;
+
 
 
 //var THE_GIVING_TREE_API_HOST = 'https://localhost:3000';
