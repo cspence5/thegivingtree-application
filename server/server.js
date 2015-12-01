@@ -5,9 +5,10 @@ var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
 var host = 'localhost';
 host = '10.99.21.59';
-
+//4000
+//3000
 // =========== DATABASE CONFIG ==========================//
-mongoose.connect('mongodb://localhost:27017/givingtrees_dev_db_v3'); // connect to database
+//mongoose.connect('mongodb://localhost:27017/givingtrees_dev_db_v3'); // connect to database
 //mongoose.connect('mongodb://10.99.21.59:27017/givingtrees_dev_db_v3'); // connect to database
 // =========== [END] DATABASE CONFIG ==========================//
 
@@ -55,6 +56,27 @@ app.use(function(req, res, next) {
 // Start the server
 app.set('port', process.env.PORT || 3000);
 
-var server = app.listen(app.get('port'), host, function() {
-  console.log('[SERVER] Express server listening on port ' + server.address().port);
-});
+//console.log(process.env.PORT);
+
+
+/**
+ database server 
+ server.js 
+ client.js
+ 
+ **/
+
+var server = app.listen(4000 || 3000, process.env.IP, function() {
+  var addr = server.address();
+   console.log("Chat server listening at", addr.address + ":" + addr.port);
+  //console.log('[SERVER] Express server listening on port ' + server.address().port);
+})
+
+
+
+var clientServer = require('../client/client.js');
+clientServer.start();
+
+var databaseServer = require( __dirname + '/config/database.js');
+databaseServer.start() 
+
