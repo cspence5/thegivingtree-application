@@ -1,9 +1,9 @@
-//var THE_GIVING_TREE_API_HOST = process.env.IP+":"+"3000";
+var THE_GIVING_TREE_API_HOST = process.env.IP + ":"+ process.env.PORT;
 
 
-var THE_GIVING_TREE_API_HOST = 'http://localhost:3000';
+//var THE_GIVING_TREE_API_HOST = 'http://localhost:3000';
 //THE_GIVING_TREE_API_HOST = 'https://givingtrees.herokuapp.com:3000';
-THE_GIVING_TREE_API_HOST = 'http://10.99.21.59:3000';
+//THE_GIVING_TREE_API_HOST = 'http://10.99.21.59:3000';
 
 myApp.factory('dataFactory', function($http) {
   /** https://docs.angularjs.org/guide/providers **/
