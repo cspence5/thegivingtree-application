@@ -1,5 +1,5 @@
 //var THE_GIVING_TREE_API_HOST = process.env.IP+":"+"3000";
-var THE_GIVING_TREE_API_HOST = process.env.IP + ":"+ process.env.PORT;
+var THE_GIVING_TREE_API_HOST = process.env.IP;
 
 
 

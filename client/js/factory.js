@@ -1,4 +1,4 @@
-var THE_GIVING_TREE_API_HOST = process.env.IP + ":"+ process.env.PORT;
+var THE_GIVING_TREE_API_HOST = process.env.IP;
 
 
 //var THE_GIVING_TREE_API_HOST = 'http://localhost:3000';
