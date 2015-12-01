@@ -4,7 +4,7 @@
 
 
 var THE_GIVING_TREE_API_HOST = 'http://localhost:3000';
-THE_GIVING_TREE_API_HOST = 'https://givingtrees.herokuapp.com';
+THE_GIVING_TREE_API_HOST = 'https://givingtrees.herokuapp.com:3000';
 //THE_GIVING_TREE_API_HOST = 'https://10.99.21.59:3000';
 
 myApp.factory('AuthenticationFactory', function($window) {
