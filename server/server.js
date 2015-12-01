@@ -68,8 +68,8 @@ app.set('port', process.env.PORT || 3000);
 
 var server = app.listen(4000 || 3000, process.env.IP, function() {
   var addr = server.address();
-   console.log("Chat server listening at", addr.address + ":" + addr.port);
-  //console.log('[SERVER] Express server listening on port ' + server.address().port);
+  console.log("Chat server listening at", addr.address + ":" + addr.port);
+  //console.log('[SERVER] Express server listening on port ' + server.address() +  server.address().port);
 })
 
 
@@ -78,5 +78,5 @@ var clientServer = require('../client/client.js');
 clientServer.start();
 
 var databaseServer = require( __dirname + '/config/database.js');
-databaseServer.start() 
+databaseServer.start(); 
 
