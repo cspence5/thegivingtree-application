@@ -66,7 +66,7 @@ app.set('port', process.env.PORT || 3000);
  
  **/
 
-var server = app.listen(4000 || 3000, 'https://givingtrees.herokuapp.com/', function() {
+var server = app.listen(4000 || 3000, '10.99.21.59', function() {
   var addr = server.address();
   console.log("listening at", addr.address + ":" + addr.port);
   //console.log('[SERVER] Express server listening on port ' + server.address() +  server.address().port);
