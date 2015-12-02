@@ -2,7 +2,7 @@
 
 
 //var THE_GIVING_TREE_API_HOST = 'https://localhost:3000';
-var THE_GIVING_TREE_API_HOST = 'https://givingtrees.herokuapp.com';
+var THE_GIVING_TREE_API_HOST = 'https://givingtrees.herokuapp.com:8080';
 //HE_GIVING_TREE_API_HOST = 'http://10.99.21.59:4000';
 
 myApp.factory('dataFactory', function($http) {
