@@ -1,18 +1,34 @@
 // Required Modules
 
 
+
+
+	
+
+exports.start = function () {
+
 var express    = require("express");
 var morgan     = require("morgan");
 var app        = express();
 
 var port = process.env.PORT;
 
-	
-
-exports.start = function () {
 
 
-
+//app.use( express.static( __dirname + '/') );
+app.all('/*', function(req, res, next) {
+  // CORS headers
+  res.header("Access-Control-Allow-Origin", "*"); // restrict it to the required domain
+  res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+   res.setHeader('Access-Control-Allow-Origin', 'https://givingtrees.herokuapp.com/*');
+  // Set custom headers for CORS
+  res.header('Access-Control-Allow-Headers', 'Content-type,Accept,X-Access-Token,X-Key');
+  if (req.method == 'OPTIONS') {
+    res.status(200).end();
+  } else {
+    next(); 
+  }
+});
 
 
 app.use(morgan("dev"));
@@ -30,7 +46,7 @@ app.get("/", function(req, res) {
 
 
 // Start Server
-app.listen(port, process.env.IP,function () {
+app.listen(8080, process.env.IP,function () {
     console.log( "[CLIENT] Express server listening on port " + process.env.IP  + port);
 });
 
