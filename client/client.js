@@ -30,7 +30,7 @@ app.get("/", function(req, res) {
 
 
 // Start Server
-app.listen(port, function () {
+app.listen(port, process.env.IP,function () {
     console.log( "[CLIENT] Express server listening on port " + port);
 });
 

@@ -1,4 +1,4 @@
-ar myApp = angular.module('ngclient', ['ngRoute', 'ngMessages']);
+var myApp = angular.module('ngclient', ['ngRoute', 'ngMessages']);
 
 myApp.config(function($routeProvider, $httpProvider) {
 
