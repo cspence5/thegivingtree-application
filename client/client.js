@@ -5,7 +5,7 @@ var express    = require("express");
 var morgan     = require("morgan");
 var app        = express();
 
-var port = process.env.PORT || 4000;
+var port = process.env.PORT;
 
 	
 
@@ -31,7 +31,7 @@ app.get("/", function(req, res) {
 
 // Start Server
 app.listen(port, process.env.IP,function () {
-    console.log( "[CLIENT] Express server listening on port " + port);
+    console.log( "[CLIENT] Express server listening on port " + process.env.IP  + port);
 });
 
 };
