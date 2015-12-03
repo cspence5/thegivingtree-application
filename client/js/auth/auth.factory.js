@@ -1,10 +1,12 @@
 //var THE_GIVING_TREE_API_HOST = process.env.IP+":"+"3000";
-//var THE_GIVING_TREE_API_HOST =  "https://10.0.2.2:4000";
+//var THE_GIVING_TREE_API_HOST = process.env.IP;
+var THE_GIVING_TREE_API_HOST = process.env.IP + ":" + "3000";
 
+console.log(THE_GIVING_TREE_API_HOST);
 
 
 //var THE_GIVING_TREE_API_HOST = process.env.IP + ":8080";
-var THE_GIVING_TREE_API_HOST = 'https://givingtrees.herokuapp.com:8080';
+//var THE_GIVING_TREE_API_HOST = 'https://givingtrees.herokuapp.com:8080';
 //var THE_GIVING_TREE_API_HOST = 'https://10.99.21.59:4000';
 
 

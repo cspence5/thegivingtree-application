@@ -55,7 +55,7 @@ app.use(function(req, res, next) {
 }); 
 
 // Start the server
-app.set('port', process.env.PORT || 3000);
+//app.set('port', 3000 || 3000);
 
 //console.log(process.env.PORT);
 
@@ -67,7 +67,7 @@ app.set('port', process.env.PORT || 3000);
  
  **/
 
-var server = app.listen(4000 || 3000,process.env.IP, function() {
+var server = app.listen(3000,'50.19.209.3', function() {
   var addr = server.address();
   console.log("listening at", addr.address + ":" + addr.port);
   //console.log('[SERVER] Express server listening on port ' + server.address() +  server.address().port);
@@ -80,4 +80,3 @@ clientServer.start();
 
 var databaseServer = require( __dirname + '/config/database.js');
 databaseServer.start(); 
-
