@@ -46,7 +46,7 @@ app.get("/", function(req, res) {
 
 
 // Start Server
-app.listen(4000,'50.19.209.3' ,function () {
+app.listen(4000,'54.243.114.196' ,function () {
     console.log( "[CLIENT] Express server listening on port " + process.env.IP  + port);
 });
 

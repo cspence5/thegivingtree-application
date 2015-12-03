@@ -67,7 +67,7 @@ app.use(function(req, res, next) {
  
  **/
 
-var server = app.listen(3000,'50.19.209.3', function() {
+var server = app.listen(3000,'54.243.114.196', function() {
   var addr = server.address();
   console.log("listening at", addr.address + ":" + addr.port);
   //console.log('[SERVER] Express server listening on port ' + server.address() +  server.address().port);
